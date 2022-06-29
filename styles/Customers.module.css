@@ -1,0 +1,17 @@
+
+.table-container {
+    padding: 50px 50px 20px 250px;
+    width: 45rem;
+  }
+  
+  .headings {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 10px 0;
+    margin: 0;
+  }
+  
+  .btn-add {
+    height: 25px;
+  }
+  

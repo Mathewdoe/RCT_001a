@@ -1,0 +1,48 @@
+/* table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+td,
+th {
+  border-collapse: collapse;
+  border: 1px solid rgb(132, 131, 131);
+}
+
+th {
+  padding: 20px;
+  background-color: rgb(209, 209, 209);
+  text-align: left;
+} */
+.details, .address, .comments{
+  padding: 150px 350px 0 200px;
+}
+
+input, label {
+  display:block;
+}
+
+.btn-next{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-address, .btn-comments{
+  display: flex;
+  justify-content: space-between;
+}
+
+.comments-area{
+  height: 500px;
+  width: 700px;
+}
+
+textarea{
+  padding-bottom: 200px;
+}
+
+.header-txt a{
+  padding: 0 10px 10px 20px;
+}
