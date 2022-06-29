@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
 
 export default function Customers() {
   const [customers, setCustomers] = useState([]);
@@ -14,7 +15,22 @@ export default function Customers() {
   }, []);
 
   return (
-    <>
+    <main>
+      <nav className="bg-gray-400 w-screen border-b-2 border-gray-300 py-4 flex justify-between items-center">
+        <section>
+          <p>Logo</p>
+        </section>
+
+        <section className="flex space-x-2 items-center">
+          <Link href="/customers">
+            <a>All Cunstomers</a>
+          </Link>
+
+          <Link href="/customers/new/details">
+            <a>Add customer</a>
+          </Link>
+        </section>
+      </nav>
       <div className="container">
         <div className="headings">
           <div className="row">
@@ -34,6 +50,7 @@ export default function Customers() {
             </span>
           </div>
         </div>
+
         <table className="table">
           <thead>
             <tr>
@@ -57,6 +74,6 @@ export default function Customers() {
           </tbody>
         </table>
       </div>
-    </>
+    </main>
   );
 }
