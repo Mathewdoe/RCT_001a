@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Button } from "@material-tailwind/react";
 
 export default function Customers() {
   const [customers, setCustomers] = useState([]);
@@ -15,22 +15,27 @@ export default function Customers() {
   }, []);
 
   return (
-    <main>
-      <nav className="bg-gray-400 w-screen border-b-2 border-gray-300 py-4 flex justify-between items-center">
+    <main className="space-y-4">
+      <nav className="w-screen border-b-2 border-gray-100 py-4 flex justify-between items-center px-4">
         <section>
           <p>Logo</p>
         </section>
 
         <section className="flex space-x-2 items-center">
           <Link href="/customers">
-            <a>All Cunstomers</a>
+            <a>
+              <Button className="bg-purple-600">All customers</Button>
+            </a>
           </Link>
 
           <Link href="/customers/new/details">
-            <a>Add customer</a>
+            <a>
+              <Button>Add customer</Button>
+            </a>
           </Link>
         </section>
       </nav>
+
       <div className="container">
         <div className="headings">
           <div className="row">
