@@ -30,7 +30,7 @@ function Footer() {
     </span> */}
 <footer className="flex h-24 w-full items-center justify-center border-t">
        
-          Powered by{' '}
+         Mathew Dube - 30 June 2022
         
       </footer>
 </footer>
