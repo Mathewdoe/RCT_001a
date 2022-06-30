@@ -13,7 +13,7 @@ const NavBar = () => {
         <section className="flex space-x-2 items-center">
           <Link href="/customers">
             <a>
-              <Button className="bg-purple-600 rounded-none">
+              <Button variant="outlined" className="">
                 All customers
               </Button>
             </a>
@@ -21,9 +21,7 @@ const NavBar = () => {
 
           <Link href="/customers/new/details">
             <a>
-              <Button className="rounded-none bg-[#328fa8]">
-                Add customer
-              </Button>
+              <Button className="bg-[#328fa8]">Add customer</Button>
             </a>
           </Link>
         </section>
