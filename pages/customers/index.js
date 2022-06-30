@@ -1,6 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
-import { Button } from "@material-tailwind/react";
+import { Button, Navbar } from "@material-tailwind/react";
+import NavBar from "../../components/NavBar";
+import Footer from "../../components/Footer";
 
 export default function Customers() {
   const [customers, setCustomers] = useState([]);
@@ -15,70 +18,52 @@ export default function Customers() {
   }, []);
 
   return (
+    <>
     <main className="space-y-4">
-      <nav className="w-screen border-b-2 border-gray-100 py-4 flex justify-between items-center px-4">
-        <section>
-          <p>Logo</p>
-        </section>
+      <NavBar />
 
-        <section className="flex space-x-2 items-center">
-          <Link href="/customers">
-            <a>
-              <Button className="bg-purple-600">All customers</Button>
-            </a>
-          </Link>
+      <section className="flex justify-center pt-4">
+        <div className="w-8/12 space-y-4">
+          <section className="flex items-center justify-between">
+            <p> All Customers({customers.length})</p>
+            <Link href="/customers/new/details">
+              <a>
+                <Button className="rounded-none">Add customer</Button>
+              </a>
+            </Link>
+          </section>
 
-          <Link href="/customers/new/details">
-            <a>
-              <Button>Add customer</Button>
-            </a>
-          </Link>
-        </section>
-      </nav>
-
-      <div className="container">
-        <div className="headings">
-          <div className="row">
-            <span className="text1 col">
-              All Cunstomers({customers.length})
-            </span>
-            <span className="col">
-              <div className="header-txt">
-                <Link href="/customers">
-                  <a>All Cunstomers</a>
-                </Link>
-
-                <Link href="/customers/new/details">
-                  <a>Add customer</a>
-                </Link>
-              </div>
-            </span>
-          </div>
+          <section>
+            <table className="table">
+              <thead>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Surname</th>
+                  <th scope="col">Cell Number</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {customers.map((customer) => (
+                  <tr key={customer.id}>
+                    <td>{customer.name}</td>
+                    <td>{customer.surname}</td>
+                    <td>{customer.cellNumber} </td>
+                    <td>
+                      <Link href={`/customers/${customer.id}/`}>
+                        <p className="text-blue-600">Read more...</p>
+                      </Link>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </section>
         </div>
-
-        <table className="table">
-          <thead>
-            <tr>
-              <th scope="col">Name</th>
-              <th scope="col">Surname</th>
-              <th scope="col">Cell Number</th>
-              <th scope="col">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {customers.map((customer) => (
-              <tr key={customer.id}>
-                <td>{customer.name}</td>
-                <td>{customer.surname}</td>
-                <td>{customer.cellNumber} </td>
-                <td>
-                  <Link href={`/customers/${customer.id}/`}>Read more...</Link>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      </section>
+      <Footer />
     </main>
+     
+     </>
   );
 }
